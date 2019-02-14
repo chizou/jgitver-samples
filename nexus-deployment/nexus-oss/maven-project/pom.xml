@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.brouillard.oss</groupId>
+    <artifactId>jgitver-nexus-sample</artifactId>
+    <version>0</version>
+    <packaging>pom</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>demo project to deploy to nexus</description>
+
+    <url>http://oss.brouillard.fr/jgitver-maven-plugin</url>
+
+    <organization>
+        <name>Matthieu Brouillard</name>
+        <url>http://oss.brouillard.fr</url>
+    </organization>
+    <inceptionYear>2018</inceptionYear>
+
+    <properties>
+        <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus</id>
+            <url>http://nexus-oss:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus</id>
+            <url>http://nexus-oss:8081/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+</project>

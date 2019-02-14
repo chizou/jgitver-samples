@@ -1,0 +1,13 @@
+version: '3'
+services:
+  maven:
+    image: "maven:3.6-jdk-11"
+    volumes:
+      - ./maven-project:/opt/projects/maven-jgitver-nexus
+      - ./nexus-settings.xml:/root/.m2/settings.xml
+    command: ["tail", "-f", "/dev/null"]
+  nexus-pro:
+    image: "sonatype/nexus:pro-2.14.11-01"
+    ports:
+      - "8281:8081"
+    
