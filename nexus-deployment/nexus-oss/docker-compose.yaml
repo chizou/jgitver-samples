@@ -1,13 +1,13 @@
 version: '3'
 services:
   maven:
-    image: "maven:3.6-jdk-11"
+    image: "maven:3.6-jdk-8"
     volumes:
       - ./maven-project:/opt/projects/maven-jgitver-nexus
       - ./nexus-settings.xml:/root/.m2/settings.xml
+      - ./bad-project:/opt/projects/bad-project
     command: ["tail", "-f", "/dev/null"]
   nexus-oss:
-    image: "sonatype/nexus:oss"
+    image: "sonatype/nexus3:latest"
     ports:
       - "8181:8081"
-    
